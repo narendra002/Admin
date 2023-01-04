@@ -7,7 +7,7 @@ const INITIAL_STATE={
 };
 export const MoviesContext=createContext(INITIAL_STATE);
 
-export const MovesContextProvider=({children})=>{
+export const MoviesContextProvider=({children})=>{
 	const[state,dispatch]=useReducer(MoviesReducer,INITIAL_STATE);
 return(
 	<MoviesContext.Provider value={
