@@ -1,14 +1,14 @@
 import MoviesReducer from "./MoviesReducer";
 import {createContext,useEffect,useReducer} from "react";
-const INTIAL_STATE={
+const INITIAL_STATE={
 		movies:[],
 				isFetching:true,
 				error:false,
 };
-export const Moviescontext=createContext(INTIAL_STATE);
+export const MoviesContext=createContext(INITIAL_STATE);
 
 export const MovesContextProvider=({children})=>{
-	const[state,dispatch]=useReducer(MoviesReducer,INTIAL_STATE);
+	const[state,dispatch]=useReducer(MoviesReducer,INITIAL_STATE);
 return(
 	<MoviesContext.Provider value={
 	{

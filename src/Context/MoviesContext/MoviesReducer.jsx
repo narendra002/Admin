@@ -1,20 +1,20 @@
 const MoviesReducer=(state,action)=>{
 	switch(action.type){
-			case:GET_MOVIES_START:
+			case GET_MOVIES_START:
 			return{
 				movies:[],
 				isFetching:true,
 				error:false,
 			};
 
-			case:GET_MOVIES_SUCCESS:
+			case GET_MOVIES_SUCCESS:
 			return{
 				movies:[],
 				isFetching:true,
 				error:false,
 			};
 
-			case:GET_MOVIES_FAILURE:
+			case GET_MOVIES_FAILURE:
 			return{
 				movies:[],
 				isFetching:false,
@@ -23,5 +23,6 @@ const MoviesReducer=(state,action)=>{
 		default:
 			return{...state};
 	}
+
 };
 export default MoviesReducer;
