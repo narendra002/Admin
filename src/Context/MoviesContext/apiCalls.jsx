@@ -6,8 +6,7 @@ export const getMovies=async(dispatch)=>{
 	dispatch(getMoviesStart());
 	try {
 		const{data:{results},}= await axios.get(`${url}/movie/popular?api_key=${API_KEY}`);
-		
-			dispatch(getMoviesSuccess(results));
+		dispatch(getMoviesSuccess(results));
 	} catch (error) {
 		dispatch(getMoviesFailure(error));
 	}
