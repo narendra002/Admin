@@ -5,7 +5,7 @@ import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState,useEffect, useContext } from "react";
 import {MoviesContext} from "../../Context/MoviesContext/MoviesContext"
-import {getMovies} from  "../../Context/MoviesContext/apiCalls"
+import {getMovies,deleteMovies} from  "../../Context/MoviesContext/apiCalls"
 
 export default function ProductList() {
  
@@ -20,11 +20,11 @@ console.log(movies);
 
 
   const handleDelete = (id) => {
-    // setData(data.filter((item) => item.id !== id));
+    deleteMovies(id,dispatch);
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "_id", headerName: "ID", width: 90 },
     {
       field: "movie",
       headerName: "Movie",
@@ -55,7 +55,7 @@ console.log(movies);
             </Link>
             <DeleteOutline
               className="productListDelete"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             />
           </>
         );
@@ -71,6 +71,7 @@ console.log(movies);
         columns={columns}
         pageSize={8}
         checkboxSelection
+        getRowId={(r)=>r._id}
       />
     </div>
   );
