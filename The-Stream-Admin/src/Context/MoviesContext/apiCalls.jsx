@@ -18,7 +18,7 @@ export const getMovies=async(dispatch)=>{
 export const deleteMovies=async(id,dispatch)=>{
 	dispatch(deleteMoviesStart());
 	try {
-		 await axios.delete(`${url}/movie/?`+id);
+		 await axios.delete(`${url}/movie/`+id);
 		
 		dispatch(deleteMoviesSuccess(id));
 	} catch (error) {
